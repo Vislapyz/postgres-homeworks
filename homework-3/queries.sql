@@ -15,8 +15,8 @@ WHERE employees.city='London' AND customers.city='London' AND shippers.company_n
 -- Отсортировать результат по возрастанию количества оставшегося товара.
 SELECT product_name, units_in_stock, contact_name, phone
 FROM products
-JOIN suppliers USING (supplier_id)
-JOIN categories USING (category_id)
+INNER JOIN suppliers USING (supplier_id)
+INNER JOIN categories USING (category_id)
 WHERE discontinued = 0 AND units_in_stock < 25 and category_name in('Dairy Products', 'Condiments')
 ORDER BY units_in_stock
 
