@@ -21,7 +21,15 @@ WHERE discontinued = 0 AND units_in_stock < 25 and category_name in('Dairy Produ
 ORDER BY units_in_stock
 
 -- 3. Список компаний заказчиков (company_name из табл customers), не сделавших ни одного заказа
+SELECT company_name
+FROM customers
+WHERE company_name NOT IN (SELECT DISTINCT company_name FROM orders
+INNER JOIN customers USING(customer_id))
 
-
--- 4. уникальные названия продуктов, которых заказано ровно 10 единиц (количество заказанных единиц см в колонке quantity табл order_details)
+-- 4. уникальные названия продуктов, которых заказано ровно 10 единиц (количество заказанных единиц см в колонке
+-- quantity табл order_details)
 -- Этот запрос написать именно с использованием подзапроса.
+SELECT DISTINCT product_name
+FROM products
+WHERE product_id in (SELECT product_id FROM order_details WHERE quantity=10)
+ORDER BY product_name
