@@ -22,7 +22,8 @@ SELECT * FROM student
 ALTER TABLE student RENAME birthday TO birth_date;
 SELECT * FROM student
 -- 5. Изменить тип данных колонки phone на varchar(32)
-
+ALTER TABLE student ALTER COLUMN phone SET DATA TYPE varchar(32);
+SELECT * FROM student
 
 -- 6. Вставить три любых записи с автогенерацией идентификатора
 
