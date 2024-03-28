@@ -11,7 +11,8 @@ CREATE TABLE student
 SELECT * FROM student
 
 -- 2. Добавить в таблицу student колонку middle_name varchar
-
+ALTER TABLE student ADD COLUMN middle_name varchar;
+SELECT * FROM student
 
 -- 3. Удалить колонку middle_name
 
