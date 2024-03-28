@@ -15,7 +15,8 @@ ALTER TABLE student ADD COLUMN middle_name varchar;
 SELECT * FROM student
 
 -- 3. Удалить колонку middle_name
-
+ALTER TABLE student DROP COLUMN middle_name;
+SELECT * FROM student
 
 -- 4. Переименовать колонку birthday в birth_date
 
