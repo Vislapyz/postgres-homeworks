@@ -33,3 +33,5 @@ INSERT INTO student(first_name, last_name, birth_date, phone) VALUES ('Afanasi',
 SELECT * FROM student
 
 -- 7. Удалить все данные из таблицы со сбросом идентификатор в исходное состояние
+TRUNCATE TABLE student RESTART IDENTITY
+SELECT * FROM student
