@@ -12,3 +12,9 @@ SELECT * FROM top_products
 -- 4. Удалить из products товары, снятые с продажи (discontinued = 1)
 -- Для 4-го пункта может потребоваться удаление ограничения, связанного с foreign_key. Подумайте, как это можно решить,
 -- чтобы связь с таблицей order_details все же осталась.
+DELETE FROM order_details
+WHERE product_id IN (SELECT product_id FROM products WHERE discontinued = 1);
+
+DELETE FROM products WHERE discontinued = 1
+
+SELECT * FROM products
